@@ -37,6 +37,13 @@ import pandas as pd
 import requests
 import yfinance as yf
 
+# Load .env file if present (pip install python-dotenv, or just export the var manually)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Ticker list
 # ─────────────────────────────────────────────────────────────────────────────

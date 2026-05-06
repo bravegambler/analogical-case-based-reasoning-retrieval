@@ -164,9 +164,8 @@ Before running the main pipeline, raw data must be downloaded. All three sub-ste
 # Install dependencies (if not already available)
 pip install yfinance requests python-dotenv
 
-# Set your Polygon.io API key (required for news download only)
+# Copy the shared API key file (key is already filled in)
 cp .env.example .env
-# Edit .env and fill in: POLYGON_API_KEY=your_key_here
 ```
 
 ### Download everything at once

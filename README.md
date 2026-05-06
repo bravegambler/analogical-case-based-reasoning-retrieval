@@ -66,6 +66,60 @@ cd /mnt/raid1/ken/Capstone_data/Capstone_Context
 
 Run stages in order. `--NewsAgg` and `--EmbModel` override `config.experiment.*` at runtime; no need to edit the YAML by hand.
 
+### Step 01: Data Download
+
+Before running the main pipeline, raw data must be downloaded. All three sub-steps are handled by `scripts/data_download.py`.
+
+#### Setup
+
+```bash
+# Install dependencies (if not already available)
+pip install yfinance requests python-dotenv
+
+# Copy the shared API key file (key is already filled in)
+cp .env.example .env
+```
+
+#### Download everything at once
+
+```bash
+python scripts/data_download.py --step all --output_dir ./Datasets
+```
+
+#### Or run individual sub-steps
+
+```bash
+# 1. Download 5-year daily OHLCV data via Yahoo Finance (free, no key needed)
+python scripts/data_download.py --step prices --output_dir ./Datasets
+
+# 2. Detect price anomalies (rolling Z-score > 2.0) per stock
+python scripts/data_download.py --step anomalies --output_dir ./Datasets
+
+# 3. Download news articles via Polygon.io (requires API key)
+python scripts/data_download.py --step news --output_dir ./Datasets
+```
+
+#### Output directories (created automatically)
+
+| Directory | Contents |
+|---|---|
+| `Datasets/nasdaq100_prices_5yrs_yfinance/` | One `{TICKER}_daily.csv` per stock |
+| `Datasets/nasdaq100_anomalies_per_stock/`  | One `{TICKER}_anomalies.csv` per stock |
+| `Datasets/nasdaq100_news_full/`            | One `{TICKER}_news.csv` per stock |
+
+#### Key options
+
+| Flag | Default | Description |
+|---|---|---|
+| `--output_dir` | `./Datasets` | Root folder for all outputs |
+| `--start_date` | 5 years ago | Download start date (YYYY-MM-DD) |
+| `--end_date` | today | Download end date (YYYY-MM-DD) |
+| `--z_threshold` | `2.0` | Z-score threshold for anomaly detection |
+| `--page_sleep` | `15.0` | Seconds between Polygon.io pages (free tier limit) |
+| `--polygon_api_key` | from `.env` | Override key via CLI (not recommended in scripts) |
+
+All steps support **resume / checkpoint**: if a ticker's output file already exists it is skipped automatically.
+
 ### Step 02: Preprocessing
 
 ```bash
@@ -153,62 +207,6 @@ python main.py --step 07 --NewsAgg pool --EmbModel bge --variant text5d
 Reports Recall@10 and NDCG@10 against the DTW ground truth over the evaluation window (`evaluate.eval_start_date` → `evaluate.eval_end_date` in `config.yaml`).
 
 To evaluate with pretrained (pre-fine-tuning) embeddings, set `evaluate.dense_embedding_source: pretrained` in `config.yaml` and use `--RetModel base` in Step 06.
-
-## Step 01: Data Download
-
-Before running the main pipeline, raw data must be downloaded. All three sub-steps are handled by `scripts/data_download.py`.
-
-### Setup
-
-```bash
-# Install dependencies (if not already available)
-pip install yfinance requests python-dotenv
-
-# Copy the shared API key file (key is already filled in)
-cp .env.example .env
-```
-
-### Download everything at once
-
-```bash
-python scripts/data_download.py --step all --output_dir ./Datasets
-```
-
-### Or run individual sub-steps
-
-```bash
-# 1. Download 5-year daily OHLCV data via Yahoo Finance (free, no key needed)
-python scripts/data_download.py --step prices --output_dir ./Datasets
-
-# 2. Detect price anomalies (rolling Z-score > 2.0) per stock
-python scripts/data_download.py --step anomalies --output_dir ./Datasets
-
-# 3. Download news articles via Polygon.io (requires API key)
-python scripts/data_download.py --step news --output_dir ./Datasets
-```
-
-### Output directories (created automatically)
-
-| Directory | Contents |
-|---|---|
-| `Datasets/nasdaq100_prices_5yrs_yfinance/` | One `{TICKER}_daily.csv` per stock |
-| `Datasets/nasdaq100_anomalies_per_stock/`  | One `{TICKER}_anomalies.csv` per stock |
-| `Datasets/nasdaq100_news_full/`            | One `{TICKER}_news.csv` per stock |
-
-### Key options
-
-| Flag | Default | Description |
-|---|---|---|
-| `--output_dir` | `./Datasets` | Root folder for all outputs |
-| `--start_date` | 5 years ago | Download start date (YYYY-MM-DD) |
-| `--end_date` | today | Download end date (YYYY-MM-DD) |
-| `--z_threshold` | `2.0` | Z-score threshold for anomaly detection |
-| `--page_sleep` | `15.0` | Seconds between Polygon.io pages (free tier limit) |
-| `--polygon_api_key` | from `.env` | Override key via CLI (not recommended in scripts) |
-
-All steps support **resume / checkpoint**: if a ticker's output file already exists it is skipped automatically.
-
----
 
 ## Diagnostic Scripts
 

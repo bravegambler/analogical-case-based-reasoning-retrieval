@@ -66,12 +66,13 @@ NASDAQ_100_TICKERS = [
 # Step 1: OHLCV download (Yahoo Finance)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def download_prices(output_dir: str, start_date: str, end_date: str) -> None:
+def download_prices(output_dir: str, start_date: str, end_date: str,
+                    tickers: list = None) -> None:
     """Download 5-year daily OHLCV data for all Nasdaq-100 tickers via yfinance."""
     save_dir = os.path.join(output_dir, "nasdaq100_prices_5yrs_yfinance")
     os.makedirs(save_dir, exist_ok=True)
 
-    tickers = NASDAQ_100_TICKERS
+    tickers = tickers or NASDAQ_100_TICKERS
     print(f"\n[prices] Downloading {len(tickers)} tickers → {save_dir}")
     print(f"[prices] Date range: {start_date} to {end_date}\n")
 
@@ -120,7 +121,8 @@ def download_prices(output_dir: str, start_date: str, end_date: str) -> None:
 # Step 2: Anomaly detection (rolling Z-score)
 # ─────────────────────────────────────────────────────────────────────────────
 
-def detect_anomalies(output_dir: str, z_threshold: float = 2.0) -> None:
+def detect_anomalies(output_dir: str, z_threshold: float = 2.0,
+                     tickers: list = None) -> None:
     """
     Compute rolling Z-scores on daily returns and flag anomalies (|Z| > threshold).
     Uses a 252-trading-day rolling window (min 63 days).
@@ -129,7 +131,12 @@ def detect_anomalies(output_dir: str, z_threshold: float = 2.0) -> None:
     save_dir   = os.path.join(output_dir, "nasdaq100_anomalies_per_stock")
     os.makedirs(save_dir, exist_ok=True)
 
-    csv_files = [f for f in os.listdir(input_dir) if f.endswith(".csv")]
+    all_files = [f for f in os.listdir(input_dir) if f.endswith(".csv")]
+    if tickers:
+        csv_files = [f for f in all_files
+                     if f.replace("_daily.csv", "").replace(".csv", "") in tickers]
+    else:
+        csv_files = all_files
     if not csv_files:
         print(f"[anomalies] No CSV files found in {input_dir}. Run --step prices first.")
         sys.exit(1)
@@ -246,12 +253,13 @@ def _fetch_news_for_ticker(ticker: str, api_key: str,
 
 def download_news(output_dir: str, api_key: str,
                   start_date: str, end_date: str,
-                  page_sleep: float = 15.0) -> None:
+                  page_sleep: float = 15.0,
+                  tickers: list = None) -> None:
     """Download Polygon.io news for all Nasdaq-100 tickers."""
     save_dir = os.path.join(output_dir, "nasdaq100_news_full")
     os.makedirs(save_dir, exist_ok=True)
 
-    tickers = NASDAQ_100_TICKERS
+    tickers = tickers or NASDAQ_100_TICKERS
     print(f"\n[news] Downloading news for {len(tickers)} tickers → {save_dir}")
     print(f"[news] Date range: {start_date} to {end_date}")
     print(f"[news] Rate-limit sleep: {page_sleep}s per page\n")
@@ -316,6 +324,11 @@ def parse_args():
         help=f"Download end date YYYY-MM-DD (default: today = {_today})",
     )
     parser.add_argument(
+        "--tickers", nargs="+", default=None, metavar="TICKER",
+        help="Limit download to specific tickers, e.g. --tickers AAPL MSFT. "
+             "Default: all 101 Nasdaq-100 tickers.",
+    )
+    parser.add_argument(
         "--polygon_api_key", default=None,
         help="Polygon.io API key (required for --step news/all). "
              "Can also be set via POLYGON_API_KEY env var.",
@@ -340,10 +353,12 @@ def main():
     run_news      = args.step in ("news",      "all")
 
     if run_prices:
-        download_prices(args.output_dir, args.start_date, args.end_date)
+        download_prices(args.output_dir, args.start_date, args.end_date,
+                        tickers=args.tickers)
 
     if run_anomalies:
-        detect_anomalies(args.output_dir, z_threshold=args.z_threshold)
+        detect_anomalies(args.output_dir, z_threshold=args.z_threshold,
+                         tickers=args.tickers)
 
     if run_news:
         api_key = args.polygon_api_key or os.environ.get("POLYGON_API_KEY")
@@ -357,6 +372,7 @@ def main():
             args.output_dir, api_key,
             args.start_date, args.end_date,
             page_sleep=args.page_sleep,
+            tickers=args.tickers,
         )
 
     print("\nAll requested steps completed.")

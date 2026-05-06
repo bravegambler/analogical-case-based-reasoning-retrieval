@@ -1,0 +1,138 @@
+# ============ Global Root & Environment ============
+project_root: "/mnt/raid1/ken/Capstone_data/Capstone_Context"
+
+device:
+  cuda_visible_devices: "0" # Switch among 0, 1, 2; check with nvidia-smi
+  vllm_gpu_utilization: 0.9
+  vllm_tensor_parallel: 1
+
+# ============ Global Experiment Settings ============
+experiment:
+  NewsAgg: "sum"   # agg | sum | pool
+  EmbModel: "bge"    # bge | contriever
+  available_NewsAggs: ["agg", "sum", "pool"]
+
+# ============ Model Definitions ============
+models:
+  bge:
+    name: "BAAI/bge-m3"
+    dim: 1024
+  contriever:
+    name: "facebook/contriever"
+    dim: 768
+
+# ============ Data Paths ============
+data:
+  dataset_dir: "${project_root}/Datasets"
+
+  # Base raw data (Source of Truth)
+  news_full_dir:             "${data.dataset_dir}/nasdaq100_news_full"
+  prices_dir:                "${data.dataset_dir}/nasdaq100_prices_5yrs_yfinance"
+  anomalies_per_stock_dir:   "${data.dataset_dir}/nasdaq100_anomalies_per_stock"
+
+  # Branch-agnostic Preprocessing
+  anomalies_split_dir:       "${data.dataset_dir}/nasdaq100_anomalies_split_macro"
+  anomaly_contexts_dir:      "${data.dataset_dir}/nasdaq100_anomaly_contexts"
+  post_anomaly_ts_dir:       "${data.dataset_dir}/nasdaq100_post_anomaly_timeseries"
+  dtw_results_dir:           "${data.dataset_dir}/nasdaq100_DTW_top10_similarity_results"
+  dtw_match_contexts_dir:    "${data.dataset_dir}/nasdaq100_DTW_match_contexts"
+
+  # Branch & Model specific outputs
+  sliding_windows_dir:       "${data.dataset_dir}/nasdaq100_sliding_windows_${experiment.NewsAgg}_${experiment.EmbModel}"
+  news_summarized_dir:       "${data.dataset_dir}/nasdaq100_daily_summaries_${experiment.NewsAgg}_${experiment.EmbModel}"
+  news_5d_summarized_dir:    "${data.dataset_dir}/nasdaq100_5d_summaries_${experiment.NewsAgg}_${experiment.EmbModel}"
+  embeddings_dir:            "${data.dataset_dir}/nasdaq100_embeddings_${experiment.NewsAgg}_${experiment.EmbModel}"
+  # Step 06 --RetModel base: pretrained encoder only (no fine-tune checkpoint); separate from embeddings_dir
+  embeddings_pretrained_dir: "${data.dataset_dir}/nasdaq100_embeddings_${experiment.NewsAgg}_${experiment.EmbModel}_pretrained"
+
+  # Training data
+  train_jsonl:               "${data.dataset_dir}/nasdaq100_train_${experiment.NewsAgg}_${experiment.EmbModel}.jsonl"
+  val_jsonl:                 "${data.dataset_dir}/nasdaq100_val_${experiment.NewsAgg}_${experiment.EmbModel}.jsonl"
+  test_jsonl:                "${data.dataset_dir}/nasdaq100_test_${experiment.NewsAgg}_${experiment.EmbModel}.jsonl"
+
+# ============ Step 02: Preprocessing ============
+preprocess:
+  train_ratio: 0.8
+  val_ratio: 0.1
+  similarity_threshold: 0.85
+  # match_news: window [anomaly_date - N, anomaly_date), i.e. excludes news on the anomaly day
+  anomaly_news_window_days: 5
+
+# ============ Step 03: DTW ============
+dtw:
+  top_k: 10
+  distance_metric: "dtw"
+
+# ============ SUM Branch (only used when branch=sum) ============
+summarize:
+  model_name: "Qwen/Qwen2.5-14B-Instruct"
+  max_tokens: 500
+  temperature: 0.3
+  sliding_window_days: 5
+
+# ============ POOL Branch (only used when branch=pool) ============
+pool:
+  pooling_type: "avg"      # max | avg | attention
+  embedding_model: "BAAI/bge-m3" 
+  #embedding_model: "facebook/contriever"
+  batch_size: 64
+  infonce_temperature: 0.05
+  learning_rate: 1.0e-4
+  # ----- Optional: text-space 5D pool (see step03 `_run_pool_text5d`) -----
+  # Which 5D-text branch to encode directly into one vector per window.
+  #   "agg" -> reads nasdaq100_5d_summaries_agg_<model>/*_5d_summaries.csv
+  #   "sum" -> reads nasdaq100_5d_summaries_sum_<model>/*_5d_summaries.csv
+  # Output (separate from daily-pool 5D):
+  #   nasdaq100_5d_pool_text_<source>_<model>/{ticker}_5d_pool.parquet
+  # Trigger: python main.py --step 03 --NewsAgg pool --RetModel text
+  text5d_source: "sum"     # agg | sum
+
+# ============ Step 05: Fine-tuning ============
+finetune:
+  #base_model: "facebook/contriever" # Switch between the two as needed
+  base_model: "BAAI/bge-m3"     
+  batch_size: 64
+  max_seq_length: 512
+  learning_rate: 2.0e-5
+  epochs: 10
+  warmup_ratio: 0.1
+  # MNRL scale = 1/temperature. Default SentenceTransformers value is 20.
+  # Lower scale (e.g. 10) = higher temperature = softer distribution.
+  mnrl_scale: 3
+  # DTW distance → similarity conversion: score = exp(-dist / tau)
+  # tau=3.0: median DTW ~2.86 → score ~0.39; top-1 DTW ~0.35 → score ~0.89
+  dtw_similarity_tau: 3.0
+  output_dir: "./checkpoints/${experiment.EmbModel}_${experiment.NewsAgg}_finetuned"
+  # Per-epoch same metric family as Step 07: mean recall@10 / NDCG@10 on DTW ground truth
+  # (query_split `val` matches step04 val window; `evaluate` matches Step 07 date range).
+  dtw_epoch_eval:
+    enabled: true
+    query_split: "val"   # val | evaluate
+    val_start: "2025-01-29"       # with val_end: same as pipeline.step04
+    val_end_exclusive: "2025-04-10"
+    n_queries: null   # null = all queries in split; or e.g. 200 for a stratified cap
+    seed: 42
+    # Full 5D-text corpus re-encode each eval is the slow part; raise if you have headroom
+    encode_batch_size: 128
+    # 1 = DTW every epoch; 2 = every other epoch (faster full runs)
+    eval_every: 1
+  # run_status.txt heartbeats (sec); 0=off. Trains: HF step logs + rough ETA. tail -f logs/.../run_status.txt
+  heartbeat_sec: 30
+  # HF trainer internal log every N steps (Contrastive / ST); smaller = more run_status lines
+  logging_steps: 5
+  # Legacy only: if dtw_epoch_eval is absent, subset_eval (evaluate window + small sample) can be used
+  subset_eval:
+    enabled: false
+    n_queries: 80
+    seed: 42
+
+# ============ Step 07: Evaluation ============
+evaluate:
+  eval_start_date: "2025-04-10"
+  eval_end_date: "2025-12-31"
+  top_k: 10
+  proximity_days: 5
+  # agg/sum dense retrieval only: finetuned -> data.embeddings_dir; pretrained -> data.embeddings_pretrained_dir
+  dense_embedding_source: "finetuned" # finetuned | pretrained
+
+

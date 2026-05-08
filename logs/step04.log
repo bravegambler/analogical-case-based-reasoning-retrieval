@@ -1,0 +1,6 @@
+[2026-04-29 10:24:19] INFO step04: Text pairs generated: train=33544, val=2669, test=3090 (dtw_similarity_tau=3.0)
+[2026-04-29 16:03:18] INFO step04: Text pairs generated: train=0, val=0, test=0 (dtw_similarity_tau=3.0)
+[2026-04-29 16:09:10] INFO step04: Text pairs generated: train=0, val=0, test=0 (dtw_similarity_tau=3.0)
+[2026-04-29 16:12:49] INFO step04: Text pairs generated: train=0, val=0, test=0 (dtw_similarity_tau=3.0)
+[2026-04-30 08:31:22] INFO step04: Text pairs generated: train=33544, val=2669, test=3090 (dtw_similarity_tau=3.0)
+[2026-04-30 23:01:49] INFO step04: Text pairs generated: train=33544, val=2669, test=3090

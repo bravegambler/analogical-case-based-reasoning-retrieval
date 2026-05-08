@@ -1,0 +1,80 @@
+[2026-04-29 16:03:40] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-04-29 16:03:40] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-04-29 16:03:43] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-04-29 16:03:44] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-04-29 16:03:44] ERROR step07: BM25 corpus empty.
+[2026-04-29 16:09:40] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-04-29 16:09:40] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-04-29 16:09:42] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-04-29 16:09:42] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-04-29 16:09:42] ERROR step07: BM25 corpus empty.
+[2026-04-29 16:13:19] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-04-29 16:13:19] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-04-29 16:13:21] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-04-29 16:13:22] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-04-29 16:13:22] ERROR step07: BM25 corpus empty.
+[2026-04-30 11:16:07] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-04-30 11:16:07] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-04-30 11:16:16] INFO step07: Dense corpus loaded: 93456 vectors | GT queries in eval window: 589
+[2026-04-30 11:16:16] INFO step07: Query–corpus key check: GT keys without exact (ticker, Window_End) match = 206 / 589 (retriever snaps to last Window_End on/before Query_Date)
+[2026-04-30 11:16:18] INFO step07: Dense query-key resolution: {'exact': 383, 'snapped': 205, 'fail_parse': 0, 'fail_no_ticker': 1, 'fail_before_first_window': 0} | unresolved_queries=1
+[2026-04-30 11:16:18] INFO step07: Per-query stats: recall nonzero=208/589 min=0.000000 max=0.300000
+[2026-04-30 11:16:18] INFO step07: Per-query stats: ndcg nonzero=208/589 min=0.000000 max=0.437352
+[2026-04-30 11:16:18] INFO step07: [BGE Results] Recall@10: 0.0413 | NDCG@10: 0.0426
+[2026-04-30 11:16:20] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-04-30 11:16:21] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-04-30 11:27:37] INFO step07: [BM25 Results] Recall@10: 0.0444 | NDCG@10: 0.0446
+[2026-05-01 00:18:40] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-05-01 00:18:40] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-05-01 00:18:48] INFO step07: Dense corpus loaded: 93456 vectors | GT queries in eval window: 589
+[2026-05-01 00:18:48] INFO step07: Query–corpus key check: GT keys without exact (ticker, Window_End) match = 206 / 589 (retriever snaps to last Window_End on/before Query_Date)
+[2026-05-01 00:18:52] INFO step07: Dense query-key resolution: {'exact': 383, 'snapped': 205, 'fail_parse': 0, 'fail_no_ticker': 1, 'fail_before_first_window': 0} | unresolved_queries=1
+[2026-05-01 00:18:52] INFO step07: Per-query stats: recall nonzero=208/589 min=0.000000 max=0.300000
+[2026-05-01 00:18:52] INFO step07: Per-query stats: ndcg nonzero=208/589 min=0.000000 max=0.437352
+[2026-05-01 00:18:52] INFO step07: [BGE Results] Recall@10: 0.0413 | NDCG@10: 0.0426
+[2026-05-01 00:18:54] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-05-01 00:18:54] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-05-01 12:20:34] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-05-01 12:20:34] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-05-01 12:20:42] INFO step07: Dense corpus loaded: 93456 vectors | GT queries in eval window: 589
+[2026-05-01 12:20:42] INFO step07: Query–corpus key check: GT keys without exact (ticker, Window_End) match = 206 / 589 (retriever snaps to last Window_End on/before Query_Date)
+[2026-05-01 12:20:44] INFO step07: Dense query-key resolution: {'exact': 383, 'snapped': 205, 'fail_parse': 0, 'fail_no_ticker': 1, 'fail_before_first_window': 0} | unresolved_queries=1
+[2026-05-01 12:20:44] INFO step07: Per-query stats: recall nonzero=226/589 min=0.000000 max=0.400000
+[2026-05-01 12:20:44] INFO step07: Per-query stats: ndcg nonzero=226/589 min=0.000000 max=0.425208
+[2026-05-01 12:20:44] INFO step07: [BGE Results] Recall@10: 0.0467 | NDCG@10: 0.0492
+[2026-05-01 12:20:46] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-05-01 12:20:46] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-05-01 12:32:12] INFO step07: [BM25 Results] Recall@10: 0.0444 | NDCG@10: 0.0446
+[2026-05-01 14:53:46] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-05-01 14:53:46] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-05-01 14:53:54] INFO step07: Dense corpus loaded: 93456 vectors | GT queries in eval window: 589
+[2026-05-01 14:53:54] INFO step07: Query–corpus key check: GT keys without exact (ticker, Window_End) match = 206 / 589 (retriever snaps to last Window_End on/before Query_Date)
+[2026-05-01 14:53:56] INFO step07: Dense query-key resolution: {'exact': 383, 'snapped': 205, 'fail_parse': 0, 'fail_no_ticker': 1, 'fail_before_first_window': 0} | unresolved_queries=1
+[2026-05-01 14:53:56] INFO step07: Per-query stats: recall nonzero=250/589 min=0.000000 max=0.300000
+[2026-05-01 14:53:56] INFO step07: Per-query stats: ndcg nonzero=250/589 min=0.000000 max=0.425208
+[2026-05-01 14:53:56] INFO step07: [BGE Results] Recall@10: 0.0523 | NDCG@10: 0.0531
+[2026-05-01 14:53:58] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-05-01 14:53:58] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-05-01 15:05:46] INFO step07: [BM25 Results] Recall@10: 0.0444 | NDCG@10: 0.0446
+[2026-05-01 17:13:14] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-05-01 17:13:14] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-05-01 17:13:23] INFO step07: Dense corpus loaded: 93456 vectors | GT queries in eval window: 589
+[2026-05-01 17:13:23] INFO step07: Query–corpus key check: GT keys without exact (ticker, Window_End) match = 206 / 589 (retriever snaps to last Window_End on/before Query_Date)
+[2026-05-01 17:13:25] INFO step07: Dense query-key resolution: {'exact': 383, 'snapped': 205, 'fail_parse': 0, 'fail_no_ticker': 1, 'fail_before_first_window': 0} | unresolved_queries=1
+[2026-05-01 17:13:25] INFO step07: Per-query stats: recall nonzero=267/589 min=0.000000 max=0.400000
+[2026-05-01 17:13:25] INFO step07: Per-query stats: ndcg nonzero=267/589 min=0.000000 max=0.358954
+[2026-05-01 17:13:25] INFO step07: [BGE Results] Recall@10: 0.0545 | NDCG@10: 0.0563
+[2026-05-01 17:13:27] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-05-01 17:13:27] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-05-01 17:24:47] INFO step07: [BM25 Results] Recall@10: 0.0444 | NDCG@10: 0.0446
+[2026-05-01 19:30:30] INFO step07: --- Evaluating Dense Retrieval [BGE] (sum branch) ---
+[2026-05-01 19:30:30] INFO step07: Corpus: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge
+[2026-05-01 19:30:38] INFO step07: Dense corpus loaded: 93456 vectors | GT queries in eval window: 589
+[2026-05-01 19:30:38] INFO step07: Query–corpus key check: GT keys without exact (ticker, Window_End) match = 206 / 589 (retriever snaps to last Window_End on/before Query_Date)
+[2026-05-01 19:30:40] INFO step07: Dense query-key resolution: {'exact': 383, 'snapped': 205, 'fail_parse': 0, 'fail_no_ticker': 1, 'fail_before_first_window': 0} | unresolved_queries=1
+[2026-05-01 19:30:40] INFO step07: Per-query stats: recall nonzero=259/589 min=0.000000 max=0.300000
+[2026-05-01 19:30:40] INFO step07: Per-query stats: ndcg nonzero=259/589 min=0.000000 max=0.469000
+[2026-05-01 19:30:40] INFO step07: [BGE Results] Recall@10: 0.0542 | NDCG@10: 0.0545
+[2026-05-01 19:30:41] INFO step07: --- Evaluating BM25 Lexical Retrieval ---
+[2026-05-01 19:30:42] INFO step07: Building BM25 index from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_5d_summaries_sum_bge
+[2026-05-01 19:42:00] INFO step07: [BM25 Results] Recall@10: 0.0444 | NDCG@10: 0.0446

@@ -1,0 +1,22 @@
+2026-05-01 10:01:50,588 INFO    MainThread:4037350 [wandb_setup.py:_flush():81] Current SDK version is 0.26.0
+2026-05-01 10:01:50,588 INFO    MainThread:4037350 [wandb_setup.py:_flush():81] Configure stats pid to 4037350
+2026-05-01 10:01:50,588 INFO    MainThread:4037350 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-05-01 10:01:50,588 INFO    MainThread:4037350 [wandb_init.py:setup_run_log_directory():721] Logging user logs to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_100149/wandb/run-20260501_100150-s5zk8hno/logs/debug.log
+2026-05-01 10:01:50,588 INFO    MainThread:4037350 [wandb_init.py:setup_run_log_directory():722] Logging internal logs to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_100149/wandb/run-20260501_100150-s5zk8hno/logs/debug-internal.log
+2026-05-01 10:01:50,588 INFO    MainThread:4037350 [wandb_init.py:init():848] calling init triggers
+2026-05-01 10:01:50,588 INFO    MainThread:4037350 [wandb_init.py:init():853] wandb.init called with sweep_config: {}
+config: {'branch': 'sum', 'model': 'bge', 'base_model': 'BAAI/bge-m3', 'batch_size': 64, 'max_seq_length': 512, 'learning_rate': 2e-05, 'epochs': 10, '_wandb': {}}
+2026-05-01 10:01:50,589 INFO    MainThread:4037350 [wandb_init.py:init():896] starting backend
+2026-05-01 10:01:51,073 INFO    MainThread:4037350 [wandb_init.py:init():911] sending inform_init request
+2026-05-01 10:01:51,093 INFO    MainThread:4037350 [wandb_init.py:init():919] backend started and connected
+2026-05-01 10:01:51,095 INFO    MainThread:4037350 [wandb_init.py:init():989] updated telemetry
+2026-05-01 10:01:51,096 INFO    MainThread:4037350 [wandb_init.py:init():1013] communicating run to backend with 90.0 second timeout
+2026-05-01 10:01:52,981 INFO    MainThread:4037350 [wandb_init.py:init():1058] starting run threads in backend
+2026-05-01 10:01:53,602 INFO    MainThread:4037350 [wandb_run.py:_console_start():2542] atexit reg
+2026-05-01 10:01:53,602 INFO    MainThread:4037350 [wandb_run.py:_redirect():2391] redirect: off
+2026-05-01 10:01:53,622 INFO    MainThread:4037350 [wandb_init.py:init():1098] run started, returning control to user process
+2026-05-01 11:50:22,245 INFO    MainThread:4037350 [wandb_run.py:_finish():2309] finishing run kenlee-reb-smu/nasdaq100-text-finetuning/s5zk8hno
+2026-05-01 11:50:22,245 INFO    MainThread:4037350 [wandb_run.py:_atexit_cleanup():2508] got exitcode: 0
+2026-05-01 11:50:22,245 INFO    MainThread:4037350 [wandb_run.py:_restore():2490] restore
+2026-05-01 11:50:22,246 INFO    MainThread:4037350 [wandb_run.py:_restore():2496] restore done
+2026-05-01 11:50:24,763 INFO    MainThread:4037350 [wandb_run.py:_footer_sync_info():3886] logging synced files

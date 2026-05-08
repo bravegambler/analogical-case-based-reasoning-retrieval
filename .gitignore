@@ -19,9 +19,8 @@ venv/
 .ipynb_checkpoints/
 *.ipynb
 
-# ── Logs & run artifacts (keep structure, ignore content) ───────────────────
-logs/
-!logs/.gitkeep
+# ── Logs & run artifacts ────────────────────────────────────────────────────
+
 
 # ── Environment / secrets ───────────────────────────────────────────────────
 .env

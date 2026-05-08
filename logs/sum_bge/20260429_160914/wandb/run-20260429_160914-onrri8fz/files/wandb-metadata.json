@@ -1,0 +1,21 @@
+{
+  "os": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.20",
+  "startedAt": "2026-04-29T08:09:14.853012Z",
+  "args": [
+    "--step",
+    "05",
+    "--NewsAgg",
+    "sum",
+    "--EmbModel",
+    "bge"
+  ],
+  "program": "/mnt/raid1/ken/Capstone_data/Capstone_Context/main.py",
+  "codePath": "main.py",
+  "codePathLocal": "main.py",
+  "email": "kenlee.reb@gmail.com",
+  "root": "/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260429_160914",
+  "host": "LMF-L40S-1",
+  "executable": "/mnt/raid1/ken/vllm_env/bin/python",
+  "writerId": "yyg2f9krocs2ep0a8t2gj1r6yv4y6ab4"
+}

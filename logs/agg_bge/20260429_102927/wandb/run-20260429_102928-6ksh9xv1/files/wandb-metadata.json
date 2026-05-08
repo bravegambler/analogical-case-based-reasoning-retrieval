@@ -1,0 +1,65 @@
+{
+  "os": "Linux-6.8.0-60-generic-x86_64-with-glibc2.39",
+  "python": "CPython 3.10.20",
+  "startedAt": "2026-04-29T02:29:28.473236Z",
+  "args": [
+    "--step",
+    "05",
+    "--NewsAgg",
+    "agg",
+    "--EmbModel",
+    "bge"
+  ],
+  "program": "/mnt/raid1/ken/Capstone_data/Capstone_Context/main.py",
+  "codePath": "main.py",
+  "codePathLocal": "main.py",
+  "email": "kenlee.reb@gmail.com",
+  "root": "/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/agg_bge/20260429_102927",
+  "host": "LMF-L40S-1",
+  "executable": "/mnt/raid1/ken/vllm_env/bin/python",
+  "cpu_count": 64,
+  "cpu_count_logical": 128,
+  "gpu": "NVIDIA L40S",
+  "gpu_count": 4,
+  "disk": {
+    "/": {
+      "total": "941289119744",
+      "used": "508543111168"
+    }
+  },
+  "memory": {
+    "total": "540504408064"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-48855ea8-8082-2c16-e888-0920ff48d2a3"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-ab61f641-8dfb-380c-a9e4-f18ae9ff6d2f"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-1b444258-8c55-f2df-95e0-bf6700ce7452"
+    },
+    {
+      "name": "NVIDIA L40S",
+      "memoryTotal": "48305799168",
+      "cudaCores": 18176,
+      "architecture": "Ada",
+      "uuid": "GPU-aadd9963-4b8b-146c-d474-d87aa281af91"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "writerId": "wfzbg6lczgpqawlhje1nh0fsjf5s7h38"
+}

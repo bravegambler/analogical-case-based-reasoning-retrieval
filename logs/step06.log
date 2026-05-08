@@ -1,0 +1,21 @@
+[2026-04-29 16:03:37] ERROR step06: Fine-tuned model not found at ./checkpoints/bge_sum_finetuned. Run Step 05 first.
+[2026-04-29 16:09:23] ERROR step06: Fine-tuned model not found at ./checkpoints/bge_sum_finetuned. Run Step 05 first.
+[2026-04-29 16:09:27] INFO step06: Loading pretrained bge from BAAI/bge-m3 -> /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge_pretrained (baseline, no fine-tune)
+[2026-04-29 16:09:37] INFO step06: Embedding 0 window files for branch: sum
+[2026-04-29 16:13:03] ERROR step06: Fine-tuned model not found at ./checkpoints/bge_sum_finetuned. Run Step 05 first.
+[2026-04-29 16:13:07] INFO step06: Loading pretrained bge from BAAI/bge-m3 -> /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge_pretrained (baseline, no fine-tune)
+[2026-04-29 16:13:17] INFO step06: Embedding 0 window files for branch: sum
+[2026-04-30 11:02:31] INFO step06: Loading fine-tuned model (sum) from ./checkpoints/bge_sum_finetuned
+[2026-04-30 11:02:34] INFO step06: Embedding 100 window files for branch: sum
+[2026-04-30 11:09:21] INFO step06: Loading pretrained bge from BAAI/bge-m3 -> /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge_pretrained (baseline, no fine-tune)
+[2026-04-30 11:09:32] INFO step06: Embedding 100 window files for branch: sum
+[2026-05-01 00:18:18] INFO step06: Loading pretrained bge from BAAI/bge-m3 -> /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_embeddings_sum_bge_pretrained (baseline, no fine-tune)
+[2026-05-01 00:18:37] INFO step06: Embedding 100 window files for branch: sum
+[2026-05-01 12:13:44] INFO step06: Loading fine-tuned model (sum) from ./checkpoints/bge_sum_finetuned
+[2026-05-01 12:13:48] INFO step06: Embedding 100 window files for branch: sum
+[2026-05-01 14:46:57] INFO step06: Loading fine-tuned model (sum) from ./checkpoints/bge_sum_finetuned
+[2026-05-01 14:47:01] INFO step06: Embedding 100 window files for branch: sum
+[2026-05-01 17:06:24] INFO step06: Loading fine-tuned model (sum) from ./checkpoints/bge_sum_finetuned
+[2026-05-01 17:06:27] INFO step06: Embedding 100 window files for branch: sum
+[2026-05-01 19:23:39] INFO step06: Loading fine-tuned model (sum) from ./checkpoints/bge_sum_finetuned
+[2026-05-01 19:23:42] INFO step06: Embedding 100 window files for branch: sum

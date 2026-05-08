@@ -1,0 +1,260 @@
+[2026-04-29 10:29:27] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/agg_bge/20260429_102927  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/agg_bge/20260429_102927/run_status.txt'
+[2026-04-29 10:29:31] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_agg_bge.jsonl...
+[2026-04-29 10:29:32] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_agg_bge.jsonl: loaded 33544 examples (33544 with dtw_score, 0 defaulted to 1.0)
+[2026-04-29 10:29:32] INFO contrastive_trainer:   Loaded 33544 training examples
+[2026-04-29 10:29:32] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_val_agg_bge.jsonl: loaded 2669 examples (2669 with dtw_score, 0 defaulted to 1.0)
+[2026-04-29 10:29:32] INFO contrastive_trainer:   Loaded 2669 validation examples
+[2026-04-29 10:29:32] INFO contrastive_trainer: Loading base model: BAAI/bge-m3
+[2026-04-29 10:29:40] INFO contrastive_trainer: Loss function: CosineSimilarityLoss (continuous DTW similarity target)
+[2026-04-29 10:29:46] INFO contrastive_trainer: Step07-style epoch eval: split=val 526 queries, corpus rows=91983 tickers=99
+[2026-04-29 10:29:46] INFO contrastive_trainer: Starting training: 10 epochs, 5250 steps, 525 warmup
+[2026-04-29 10:29:46] INFO contrastive_trainer: Each epoch end: DTW eval shows tqdm on stderr — `DTW corpus encode` (~719 batches, encode_batch_size=128, 91983 texts) then `DTW val queries`; long CPU/GPU time is normal.
+[2026-04-29 10:29:46] INFO contrastive_trainer: >>> Entering model.fit: the FIRST long phase is TRAINING (SentenceTransformers tqdm), NOT DTW encode. DTW re-encode runs only at each EPOCH END (after all train steps that epoch). If the screen stays blank, check GPU with nvidia-smi; with wandb, ensure console=off or WANDB_CONSOLE=off.
+[2026-04-29 10:29:46] WARNING contrastive_trainer: model.fit TypeError (full kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-04-29 10:29:46] WARNING contrastive_trainer: model.fit TypeError (partial kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'logging_steps'")
+[2026-04-29 10:29:46] WARNING contrastive_trainer: model.fit TypeError (minimal path): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-04-29 10:48:34] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 10:53:39] INFO contrastive_trainer: Epoch 1 | train_loss=0.021609 val_loss=0.042048 val_recall@10=0.03521400778210116 val_ndcg@10=0.0369352410840144
+[2026-04-29 11:14:23] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 11:19:14] INFO contrastive_trainer: Epoch 2 | train_loss=0.008476 val_loss=0.022798 val_recall@10=0.029182879377431907 val_ndcg@10=0.032889492812769865
+[2026-04-29 11:37:52] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 11:42:29] INFO contrastive_trainer: Epoch 3 | train_loss=0.00549 val_loss=0.02099 val_recall@10=0.03171206225680934 val_ndcg@10=0.03554861329788387
+[2026-04-29 12:01:06] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 12:05:40] INFO contrastive_trainer: Epoch 4 | train_loss=0.004596 val_loss=0.021304 val_recall@10=0.03132295719844358 val_ndcg@10=0.03520584126717404
+[2026-04-29 12:24:18] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 12:28:55] INFO contrastive_trainer: Epoch 5 | train_loss=0.00382 val_loss=0.019984 val_recall@10=0.029182879377431907 val_ndcg@10=0.03406847208968683
+[2026-04-29 12:47:33] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 12:52:11] INFO contrastive_trainer: Epoch 6 | train_loss=0.003237 val_loss=0.022098 val_recall@10=0.03346303501945526 val_ndcg@10=0.0380190863235865
+[2026-04-29 13:10:48] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 13:15:22] INFO contrastive_trainer: Epoch 7 | train_loss=0.002842 val_loss=0.018848 val_recall@10=0.03249027237354085 val_ndcg@10=0.036505723199247206
+[2026-04-29 13:34:00] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 13:41:25] INFO contrastive_trainer: Epoch 8 | train_loss=0.002518 val_loss=0.01919 val_recall@10=0.031906614785992216 val_ndcg@10=0.03644058178232432
+[2026-04-29 14:14:22] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 14:22:09] INFO contrastive_trainer: Epoch 9 | train_loss=0.002211 val_loss=0.019099 val_recall@10=0.031906614785992216 val_ndcg@10=0.036295255475399864
+[2026-04-29 14:55:09] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-29 15:02:57] INFO contrastive_trainer: Epoch 10 | train_loss=0.002042 val_loss=0.019166 val_recall@10=0.03171206225680934 val_ndcg@10=0.035741989815184554
+[2026-04-29 15:02:58] INFO contrastive_trainer: Training complete. Best model saved to: ./checkpoints/bge_agg_finetuned
+[2026-04-29 15:02:58] INFO contrastive_trainer: Metrics written to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/agg_bge/20260429_102927
+[2026-04-29 16:03:27] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260429_160327  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260429_160327/run_status.txt'
+[2026-04-29 16:03:31] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-04-29 16:03:31] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 0 examples (0 with dtw_score, 0 defaulted to 1.0)
+[2026-04-29 16:03:31] INFO contrastive_trainer:   Loaded 0 training examples
+[2026-04-29 16:03:31] ERROR contrastive_trainer: No training examples; aborting.
+[2026-04-29 16:09:14] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260429_160914  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260429_160914/run_status.txt'
+[2026-04-29 16:09:16] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-04-29 16:09:16] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 0 examples (0 with dtw_score, 0 defaulted to 1.0)
+[2026-04-29 16:09:16] INFO contrastive_trainer:   Loaded 0 training examples
+[2026-04-29 16:09:16] ERROR contrastive_trainer: No training examples; aborting.
+[2026-04-29 16:12:53] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260429_161253  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260429_161253/run_status.txt'
+[2026-04-29 16:12:56] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-04-29 16:12:56] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 0 examples (0 with dtw_score, 0 defaulted to 1.0)
+[2026-04-29 16:12:56] INFO contrastive_trainer:   Loaded 0 training examples
+[2026-04-29 16:12:56] ERROR contrastive_trainer: No training examples; aborting.
+[2026-04-30 08:33:59] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260430_083359  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260430_083359/run_status.txt'
+[2026-04-30 08:34:04] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-04-30 08:34:05] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 33544 examples (33544 with dtw_score, 0 defaulted to 1.0)
+[2026-04-30 08:34:05] INFO contrastive_trainer:   Loaded 33544 training examples
+[2026-04-30 08:34:05] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_val_sum_bge.jsonl: loaded 2669 examples (2669 with dtw_score, 0 defaulted to 1.0)
+[2026-04-30 08:34:05] INFO contrastive_trainer:   Loaded 2669 validation examples
+[2026-04-30 08:34:05] INFO contrastive_trainer: Loading base model: BAAI/bge-m3
+[2026-04-30 08:34:30] INFO contrastive_trainer: Loss function: CosineSimilarityLoss (continuous DTW similarity target)
+[2026-04-30 08:34:36] INFO contrastive_trainer: Step07-style epoch eval: split=val 526 queries, corpus rows=91983 tickers=99
+[2026-04-30 08:34:36] INFO contrastive_trainer: Starting training: 10 epochs, 5250 steps, 525 warmup
+[2026-04-30 08:34:36] INFO contrastive_trainer: Each epoch end: DTW eval shows tqdm on stderr — `DTW corpus encode` (~719 batches, encode_batch_size=128, 91983 texts) then `DTW val queries`; long CPU/GPU time is normal.
+[2026-04-30 08:34:36] INFO contrastive_trainer: >>> Entering model.fit: the FIRST long phase is TRAINING (SentenceTransformers tqdm), NOT DTW encode. DTW re-encode runs only at each EPOCH END (after all train steps that epoch). If the screen stays blank, check GPU with nvidia-smi; with wandb, ensure console=off or WANDB_CONSOLE=off.
+[2026-04-30 08:34:36] WARNING contrastive_trainer: model.fit TypeError (full kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-04-30 08:34:36] WARNING contrastive_trainer: model.fit TypeError (partial kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'logging_steps'")
+[2026-04-30 08:34:36] WARNING contrastive_trainer: model.fit TypeError (minimal path): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-04-30 08:42:41] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 08:45:25] INFO contrastive_trainer: Epoch 1 | train_loss=0.023424 val_loss=0.022138 val_recall@10=0.04377431906614786 val_ndcg@10=0.045798993506255534
+[2026-04-30 09:28:43] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 09:31:27] INFO contrastive_trainer: Epoch 2 | train_loss=0.00977 val_loss=0.01777 val_recall@10=0.041634241245136185 val_ndcg@10=0.04601581585892018
+[2026-04-30 09:39:27] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 09:42:10] INFO contrastive_trainer: Epoch 3 | train_loss=0.006457 val_loss=0.016257 val_recall@10=0.04046692607003891 val_ndcg@10=0.042609103849476956
+[2026-04-30 09:50:09] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 09:52:53] INFO contrastive_trainer: Epoch 4 | train_loss=0.005049 val_loss=0.017295 val_recall@10=0.041245136186770434 val_ndcg@10=0.043695596464655775
+[2026-04-30 10:00:53] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 10:03:36] INFO contrastive_trainer: Epoch 5 | train_loss=0.004275 val_loss=0.015673 val_recall@10=0.04007782101167315 val_ndcg@10=0.041418601144826574
+[2026-04-30 10:11:35] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 10:14:18] INFO contrastive_trainer: Epoch 6 | train_loss=0.003681 val_loss=0.015092 val_recall@10=0.04182879377431906 val_ndcg@10=0.042460510012297004
+[2026-04-30 10:22:18] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 10:25:01] INFO contrastive_trainer: Epoch 7 | train_loss=0.003183 val_loss=0.015477 val_recall@10=0.039105058365758755 val_ndcg@10=0.03948663069544625
+[2026-04-30 10:33:01] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 10:35:44] INFO contrastive_trainer: Epoch 8 | train_loss=0.002852 val_loss=0.015408 val_recall@10=0.04202334630350194 val_ndcg@10=0.04291631212754468
+[2026-04-30 10:43:44] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 10:46:28] INFO contrastive_trainer: Epoch 9 | train_loss=0.002552 val_loss=0.015498 val_recall@10=0.04085603112840467 val_ndcg@10=0.041157019071410145
+[2026-04-30 10:54:27] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 10:57:10] INFO contrastive_trainer: Epoch 10 | train_loss=0.002331 val_loss=0.015503 val_recall@10=0.041245136186770434 val_ndcg@10=0.04207175836560935
+[2026-04-30 10:57:14] INFO contrastive_trainer: Training complete. Best model saved to: ./checkpoints/bge_sum_finetuned
+[2026-04-30 10:57:14] INFO contrastive_trainer: Metrics written to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260430_083359
+[2026-04-30 23:02:37] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260430_230237  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260430_230237/run_status.txt'
+[2026-04-30 23:02:41] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-04-30 23:02:42] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 33544 examples
+[2026-04-30 23:02:42] INFO contrastive_trainer:   Loaded 33544 training examples
+[2026-04-30 23:02:42] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_val_sum_bge.jsonl: loaded 2669 examples
+[2026-04-30 23:02:42] INFO contrastive_trainer:   Loaded 2669 validation examples
+[2026-04-30 23:02:42] INFO contrastive_trainer: Loading base model: BAAI/bge-m3
+[2026-04-30 23:02:51] INFO contrastive_trainer: Loss function: MultipleNegativesRankingLoss (in-batch negatives)
+[2026-04-30 23:02:57] INFO contrastive_trainer: Step07-style epoch eval: split=val 526 queries, corpus rows=91983 tickers=99
+[2026-04-30 23:02:57] INFO contrastive_trainer: Starting training: 10 epochs, 5240 steps, 524 warmup
+[2026-04-30 23:02:57] INFO contrastive_trainer: Each epoch end: DTW eval shows tqdm on stderr — `DTW corpus encode` (~719 batches, encode_batch_size=128, 91983 texts) then `DTW val queries`; long CPU/GPU time is normal.
+[2026-04-30 23:02:57] INFO contrastive_trainer: >>> Entering model.fit: the FIRST long phase is TRAINING (SentenceTransformers tqdm), NOT DTW encode. DTW re-encode runs only at each EPOCH END (after all train steps that epoch). If the screen stays blank, check GPU with nvidia-smi; with wandb, ensure console=off or WANDB_CONSOLE=off.
+[2026-04-30 23:02:57] WARNING contrastive_trainer: model.fit TypeError (full kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-04-30 23:02:57] WARNING contrastive_trainer: model.fit TypeError (partial kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'logging_steps'")
+[2026-04-30 23:02:57] WARNING contrastive_trainer: model.fit TypeError (minimal path): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-04-30 23:15:39] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 23:20:20] INFO contrastive_trainer: Epoch 1 | train_loss=4.103676 val_loss=4.23309 val_recall@10=0.04941634241245136 val_ndcg@10=0.052085371406848
+[2026-04-30 23:33:05] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 23:37:44] INFO contrastive_trainer: Epoch 2 | train_loss=3.76391 val_loss=4.846998 val_recall@10=0.05175097276264592 val_ndcg@10=0.05186709307672142
+[2026-04-30 23:48:48] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-04-30 23:52:46] INFO contrastive_trainer: Epoch 3 | train_loss=3.365119 val_loss=5.632401 val_recall@10=0.05077821011673152 val_ndcg@10=0.05215015431721171
+[2026-05-01 00:05:26] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 00:10:06] INFO contrastive_trainer: Epoch 4 | train_loss=2.974829 val_loss=6.377537 val_recall@10=0.05038910505836575 val_ndcg@10=0.05221648769002425
+[2026-05-01 10:01:49] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_100149  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_100149/run_status.txt'
+[2026-05-01 10:01:53] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-05-01 10:01:53] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 33544 examples
+[2026-05-01 10:01:53] INFO contrastive_trainer:   Loaded 33544 training examples
+[2026-05-01 10:01:54] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_val_sum_bge.jsonl: loaded 2669 examples
+[2026-05-01 10:01:54] INFO contrastive_trainer:   Loaded 2669 validation examples
+[2026-05-01 10:01:54] INFO contrastive_trainer: Loading base model: BAAI/bge-m3
+[2026-05-01 10:02:08] INFO contrastive_trainer: Loss function: MultipleNegativesRankingLoss (in-batch negatives)
+[2026-05-01 10:02:16] INFO contrastive_trainer: Step07-style epoch eval: split=val 526 queries, corpus rows=91983 tickers=99
+[2026-05-01 10:02:16] INFO contrastive_trainer: Starting training: 10 epochs, 5240 steps, 524 warmup
+[2026-05-01 10:02:16] INFO contrastive_trainer: Each epoch end: DTW eval shows tqdm on stderr — `DTW corpus encode` (~719 batches, encode_batch_size=128, 91983 texts) then `DTW val queries`; long CPU/GPU time is normal.
+[2026-05-01 10:02:16] INFO contrastive_trainer: >>> Entering model.fit: the FIRST long phase is TRAINING (SentenceTransformers tqdm), NOT DTW encode. DTW re-encode runs only at each EPOCH END (after all train steps that epoch). If the screen stays blank, check GPU with nvidia-smi; with wandb, ensure console=off or WANDB_CONSOLE=off.
+[2026-05-01 10:02:16] WARNING contrastive_trainer: model.fit TypeError (full kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 10:02:16] WARNING contrastive_trainer: model.fit TypeError (partial kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'logging_steps'")
+[2026-05-01 10:02:16] WARNING contrastive_trainer: model.fit TypeError (minimal path): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 10:10:18] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 10:13:02] INFO contrastive_trainer: Epoch 1 | train_loss=4.111783 val_loss=4.254478 val_recall@10=0.04474708171206226 val_ndcg@10=0.04772407459634782
+[2026-05-01 10:21:20] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 10:24:04] INFO contrastive_trainer: Epoch 2 | train_loss=3.816994 val_loss=4.758338 val_recall@10=0.05058365758754864 val_ndcg@10=0.05124265670789595
+[2026-05-01 10:32:14] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 10:34:58] INFO contrastive_trainer: Epoch 3 | train_loss=3.424653 val_loss=5.360628 val_recall@10=0.05369649805447471 val_ndcg@10=0.05599068968315328
+[2026-05-01 10:43:06] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 10:45:50] INFO contrastive_trainer: Epoch 4 | train_loss=3.036926 val_loss=6.288554 val_recall@10=0.048832684824902724 val_ndcg@10=0.04894559311759041
+[2026-05-01 10:53:51] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 10:56:35] INFO contrastive_trainer: Epoch 5 | train_loss=2.618364 val_loss=6.828997 val_recall@10=0.04961089494163424 val_ndcg@10=0.04909103652029053
+[2026-05-01 11:04:36] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 11:07:20] INFO contrastive_trainer: Epoch 6 | train_loss=2.183981 val_loss=7.339507 val_recall@10=0.04824902723735409 val_ndcg@10=0.04849137409980514
+[2026-05-01 11:15:21] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 11:18:06] INFO contrastive_trainer: Epoch 7 | train_loss=1.855762 val_loss=7.602896 val_recall@10=0.051167315175097275 val_ndcg@10=0.050388082857155354
+[2026-05-01 11:26:07] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 11:28:51] INFO contrastive_trainer: Epoch 8 | train_loss=1.59669 val_loss=7.68293 val_recall@10=0.04824902723735408 val_ndcg@10=0.04761916997867867
+[2026-05-01 11:36:52] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 11:39:36] INFO contrastive_trainer: Epoch 9 | train_loss=1.425599 val_loss=7.776064 val_recall@10=0.04922178988326848 val_ndcg@10=0.04823112333683639
+[2026-05-01 11:47:36] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 11:50:21] INFO contrastive_trainer: Epoch 10 | train_loss=1.310031 val_loss=7.780678 val_recall@10=0.04824902723735409 val_ndcg@10=0.047009475410384464
+[2026-05-01 11:50:22] INFO contrastive_trainer: Training complete. Best model saved to: ./checkpoints/bge_sum_finetuned
+[2026-05-01 11:50:22] INFO contrastive_trainer: Metrics written to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_100149
+[2026-05-01 12:57:24] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_125724  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_125724/run_status.txt'
+[2026-05-01 12:57:27] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-05-01 12:57:28] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 33544 examples
+[2026-05-01 12:57:28] INFO contrastive_trainer:   Loaded 33544 training examples
+[2026-05-01 12:57:28] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_val_sum_bge.jsonl: loaded 2669 examples
+[2026-05-01 12:57:28] INFO contrastive_trainer:   Loaded 2669 validation examples
+[2026-05-01 12:57:28] INFO contrastive_trainer: Loading base model: BAAI/bge-m3
+[2026-05-01 12:57:42] INFO contrastive_trainer: Loss function: MultipleNegativesRankingLoss (scale=10.0, temperature=0.1000)
+[2026-05-01 12:57:48] INFO contrastive_trainer: Step07-style epoch eval: split=val 526 queries, corpus rows=91983 tickers=99
+[2026-05-01 12:57:48] INFO contrastive_trainer: Starting training: 10 epochs, 5240 steps, 524 warmup
+[2026-05-01 12:57:48] INFO contrastive_trainer: Each epoch end: DTW eval shows tqdm on stderr — `DTW corpus encode` (~719 batches, encode_batch_size=128, 91983 texts) then `DTW val queries`; long CPU/GPU time is normal.
+[2026-05-01 12:57:48] INFO contrastive_trainer: >>> Entering model.fit: the FIRST long phase is TRAINING (SentenceTransformers tqdm), NOT DTW encode. DTW re-encode runs only at each EPOCH END (after all train steps that epoch). If the screen stays blank, check GPU with nvidia-smi; with wandb, ensure console=off or WANDB_CONSOLE=off.
+[2026-05-01 12:57:48] WARNING contrastive_trainer: model.fit TypeError (full kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 12:57:48] WARNING contrastive_trainer: model.fit TypeError (partial kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'logging_steps'")
+[2026-05-01 12:57:48] WARNING contrastive_trainer: model.fit TypeError (minimal path): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 13:05:54] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 13:08:38] INFO contrastive_trainer: Epoch 1 | train_loss=4.089577 val_loss=4.18094 val_recall@10=0.05058365758754864 val_ndcg@10=0.05285229185616316
+[2026-05-01 13:16:55] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 13:19:38] INFO contrastive_trainer: Epoch 2 | train_loss=3.82663 val_loss=4.54092 val_recall@10=0.05175097276264592 val_ndcg@10=0.05347179839499623
+[2026-05-01 13:27:45] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 13:30:29] INFO contrastive_trainer: Epoch 3 | train_loss=3.427983 val_loss=5.242471 val_recall@10=0.04669260700389105 val_ndcg@10=0.04907027366294897
+[2026-05-01 13:38:30] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 13:41:13] INFO contrastive_trainer: Epoch 4 | train_loss=3.074906 val_loss=5.488943 val_recall@10=0.05272373540856031 val_ndcg@10=0.052802221843415174
+[2026-05-01 13:49:29] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 13:52:16] INFO contrastive_trainer: Epoch 5 | train_loss=2.722105 val_loss=5.621774 val_recall@10=0.04824902723735409 val_ndcg@10=0.049204307203885016
+[2026-05-01 14:00:17] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 14:03:01] INFO contrastive_trainer: Epoch 6 | train_loss=2.378969 val_loss=5.806816 val_recall@10=0.051167315175097275 val_ndcg@10=0.052196707104434144
+[2026-05-01 14:11:01] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 14:13:46] INFO contrastive_trainer: Epoch 7 | train_loss=2.119932 val_loss=5.905035 val_recall@10=0.0509727626459144 val_ndcg@10=0.05110921213078703
+[2026-05-01 14:21:46] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 14:24:30] INFO contrastive_trainer: Epoch 8 | train_loss=1.927793 val_loss=5.933755 val_recall@10=0.05330739299610895 val_ndcg@10=0.05377632460258058
+[2026-05-01 14:32:36] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 14:35:19] INFO contrastive_trainer: Epoch 9 | train_loss=1.790813 val_loss=5.982162 val_recall@10=0.05428015564202334 val_ndcg@10=0.054800425088089466
+[2026-05-01 14:43:26] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 14:46:10] INFO contrastive_trainer: Epoch 10 | train_loss=1.700782 val_loss=5.97539 val_recall@10=0.05291828793774318 val_ndcg@10=0.05382314662172765
+[2026-05-01 14:46:11] INFO contrastive_trainer: Training complete. Best model saved to: ./checkpoints/bge_sum_finetuned
+[2026-05-01 14:46:11] INFO contrastive_trainer: Metrics written to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_125724
+[2026-05-01 15:17:22] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_151722  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_151722/run_status.txt'
+[2026-05-01 15:17:26] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-05-01 15:17:27] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 33544 examples
+[2026-05-01 15:17:27] INFO contrastive_trainer:   Loaded 33544 training examples
+[2026-05-01 15:17:27] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_val_sum_bge.jsonl: loaded 2669 examples
+[2026-05-01 15:17:27] INFO contrastive_trainer:   Loaded 2669 validation examples
+[2026-05-01 15:17:27] INFO contrastive_trainer: Loading base model: BAAI/bge-m3
+[2026-05-01 15:17:37] INFO contrastive_trainer: Loss function: MultipleNegativesRankingLoss (scale=5.0, temperature=0.2000)
+[2026-05-01 15:17:43] INFO contrastive_trainer: Step07-style epoch eval: split=val 526 queries, corpus rows=91983 tickers=99
+[2026-05-01 15:17:43] INFO contrastive_trainer: Starting training: 10 epochs, 5240 steps, 524 warmup
+[2026-05-01 15:17:43] INFO contrastive_trainer: Each epoch end: DTW eval shows tqdm on stderr — `DTW corpus encode` (~719 batches, encode_batch_size=128, 91983 texts) then `DTW val queries`; long CPU/GPU time is normal.
+[2026-05-01 15:17:43] INFO contrastive_trainer: >>> Entering model.fit: the FIRST long phase is TRAINING (SentenceTransformers tqdm), NOT DTW encode. DTW re-encode runs only at each EPOCH END (after all train steps that epoch). If the screen stays blank, check GPU with nvidia-smi; with wandb, ensure console=off or WANDB_CONSOLE=off.
+[2026-05-01 15:17:43] WARNING contrastive_trainer: model.fit TypeError (full kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 15:17:43] WARNING contrastive_trainer: model.fit TypeError (partial kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'logging_steps'")
+[2026-05-01 15:17:43] WARNING contrastive_trainer: model.fit TypeError (minimal path): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 15:25:46] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 15:28:30] INFO contrastive_trainer: Epoch 1 | train_loss=4.078871 val_loss=4.258955 val_recall@10=0.05019455252918288 val_ndcg@10=0.05118902307741105
+[2026-05-01 15:36:37] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 15:39:21] INFO contrastive_trainer: Epoch 2 | train_loss=3.79507 val_loss=4.442581 val_recall@10=0.051167315175097275 val_ndcg@10=0.05184745716158704
+[2026-05-01 15:47:27] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 15:50:10] INFO contrastive_trainer: Epoch 3 | train_loss=3.451248 val_loss=4.718746 val_recall@10=0.0519455252918288 val_ndcg@10=0.052805274724403724
+[2026-05-01 15:58:16] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 16:00:59] INFO contrastive_trainer: Epoch 4 | train_loss=3.211265 val_loss=4.869732 val_recall@10=0.05544747081712062 val_ndcg@10=0.05503166500681619
+[2026-05-01 16:09:05] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 16:11:51] INFO contrastive_trainer: Epoch 5 | train_loss=3.040356 val_loss=4.946472 val_recall@10=0.051361867704280154 val_ndcg@10=0.051948492160646294
+[2026-05-01 16:19:52] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 16:22:37] INFO contrastive_trainer: Epoch 6 | train_loss=2.873508 val_loss=4.983289 val_recall@10=0.05544747081712062 val_ndcg@10=0.05645071802530506
+[2026-05-01 16:30:37] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 16:33:21] INFO contrastive_trainer: Epoch 7 | train_loss=2.693902 val_loss=5.028092 val_recall@10=0.060894941634241244 val_ndcg@10=0.06097911516528943
+[2026-05-01 16:41:26] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 16:44:09] INFO contrastive_trainer: Epoch 8 | train_loss=2.543664 val_loss=5.09374 val_recall@10=0.053501945525291826 val_ndcg@10=0.05506634037621756
+[2026-05-01 16:52:09] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 16:54:53] INFO contrastive_trainer: Epoch 9 | train_loss=2.435313 val_loss=5.10352 val_recall@10=0.0566147859922179 val_ndcg@10=0.056982088504134096
+[2026-05-01 17:02:53] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 17:05:37] INFO contrastive_trainer: Epoch 10 | train_loss=2.366287 val_loss=5.112144 val_recall@10=0.058171206225680935 val_ndcg@10=0.05954726946356783
+[2026-05-01 17:05:38] INFO contrastive_trainer: Training complete. Best model saved to: ./checkpoints/bge_sum_finetuned
+[2026-05-01 17:05:38] INFO contrastive_trainer: Metrics written to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_151722
+[2026-05-01 17:34:28] INFO contrastive_trainer: Step05 artifacts under: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_173428  |  live progress: tail -f '/mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_173428/run_status.txt'
+[2026-05-01 17:34:32] INFO contrastive_trainer: Loading training data from /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl...
+[2026-05-01 17:34:32] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_train_sum_bge.jsonl: loaded 33544 examples
+[2026-05-01 17:34:32] INFO contrastive_trainer:   Loaded 33544 training examples
+[2026-05-01 17:34:32] INFO contrastive_trainer: /mnt/raid1/ken/Capstone_data/Capstone_Context/Datasets/nasdaq100_val_sum_bge.jsonl: loaded 2669 examples
+[2026-05-01 17:34:32] INFO contrastive_trainer:   Loaded 2669 validation examples
+[2026-05-01 17:34:32] INFO contrastive_trainer: Loading base model: BAAI/bge-m3
+[2026-05-01 17:34:42] INFO contrastive_trainer: Loss function: MultipleNegativesRankingLoss (scale=3.0, temperature=0.3333)
+[2026-05-01 17:34:47] INFO contrastive_trainer: Step07-style epoch eval: split=val 526 queries, corpus rows=91983 tickers=99
+[2026-05-01 17:34:47] INFO contrastive_trainer: Starting training: 10 epochs, 5240 steps, 524 warmup
+[2026-05-01 17:34:47] INFO contrastive_trainer: Each epoch end: DTW eval shows tqdm on stderr — `DTW corpus encode` (~719 batches, encode_batch_size=128, 91983 texts) then `DTW val queries`; long CPU/GPU time is normal.
+[2026-05-01 17:34:47] INFO contrastive_trainer: >>> Entering model.fit: the FIRST long phase is TRAINING (SentenceTransformers tqdm), NOT DTW encode. DTW re-encode runs only at each EPOCH END (after all train steps that epoch). If the screen stays blank, check GPU with nvidia-smi; with wandb, ensure console=off or WANDB_CONSOLE=off.
+[2026-05-01 17:34:47] WARNING contrastive_trainer: model.fit TypeError (full kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 17:34:47] WARNING contrastive_trainer: model.fit TypeError (partial kwargs): TypeError("FitMixin.fit() got an unexpected keyword argument 'logging_steps'")
+[2026-05-01 17:34:47] WARNING contrastive_trainer: model.fit TypeError (minimal path): TypeError("FitMixin.fit() got an unexpected keyword argument 'dataloader_num_workers'")
+[2026-05-01 17:42:51] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 17:45:36] INFO contrastive_trainer: Epoch 1 | train_loss=4.073819 val_loss=4.217356 val_recall@10=0.05077821011673152 val_ndcg@10=0.05321257924715451
+[2026-05-01 17:53:45] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 17:56:28] INFO contrastive_trainer: Epoch 2 | train_loss=3.757767 val_loss=4.405291 val_recall@10=0.05272373540856031 val_ndcg@10=0.054548969679065064
+[2026-05-01 18:04:37] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 18:07:21] INFO contrastive_trainer: Epoch 3 | train_loss=3.467116 val_loss=4.538621 val_recall@10=0.0575875486381323 val_ndcg@10=0.05797412876173785
+[2026-05-01 18:15:28] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 18:18:13] INFO contrastive_trainer: Epoch 4 | train_loss=3.282874 val_loss=4.651444 val_recall@10=0.058365758754863814 val_ndcg@10=0.05960135453565908
+[2026-05-01 18:26:19] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 18:29:05] INFO contrastive_trainer: Epoch 5 | train_loss=3.16377 val_loss=4.721495 val_recall@10=0.05797665369649805 val_ndcg@10=0.056086569528444465
+[2026-05-01 18:37:05] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 18:39:49] INFO contrastive_trainer: Epoch 6 | train_loss=3.068317 val_loss=4.766036 val_recall@10=0.057003891050583656 val_ndcg@10=0.05807194727328512
+[2026-05-01 18:47:49] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 18:50:33] INFO contrastive_trainer: Epoch 7 | train_loss=2.974203 val_loss=4.740753 val_recall@10=0.06167315175097276 val_ndcg@10=0.06414643310115925
+[2026-05-01 18:58:38] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 19:01:22] INFO contrastive_trainer: Epoch 8 | train_loss=2.876915 val_loss=4.726186 val_recall@10=0.05894941634241245 val_ndcg@10=0.056373079872286146
+[2026-05-01 19:09:22] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 19:12:06] INFO contrastive_trainer: Epoch 9 | train_loss=2.801989 val_loss=4.728683 val_recall@10=0.05369649805447471 val_ndcg@10=0.05360043382569993
+[2026-05-01 19:20:07] INFO contrastive_trainer: End of epoch: running DTW retrieval eval (see tqdm + epoch_dtw_eval logs). Full-corpus BGE encode is slow; 30–120 min first time is not unusual.
+[2026-05-01 19:22:51] INFO contrastive_trainer: Epoch 10 | train_loss=2.753656 val_loss=4.723937 val_recall@10=0.05972762645914397 val_ndcg@10=0.060583929934555775
+[2026-05-01 19:22:52] INFO contrastive_trainer: Training complete. Best model saved to: ./checkpoints/bge_sum_finetuned
+[2026-05-01 19:22:52] INFO contrastive_trainer: Metrics written to /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_173428

@@ -1,0 +1,213 @@
+[2026-04-29 09:24:25] INFO main: Overriding active branch: sum
+[2026-04-29 09:24:25] INFO main: Overriding active model: bge
+[2026-04-29 09:59:13] INFO main: Overriding active branch: sum
+[2026-04-29 09:59:13] INFO main: Overriding active model: bge
+[2026-04-29 09:59:57] INFO main: Overriding active branch: sum
+[2026-04-29 09:59:57] INFO main: Overriding active model: bge
+[2026-04-29 10:04:30] INFO main: Overriding active branch: sum
+[2026-04-29 10:04:30] INFO main: Overriding active model: bge
+[2026-04-29 10:04:30] INFO main: RUN: step=03 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 10:12:09] INFO main: Overriding active branch: agg
+[2026-04-29 10:12:09] INFO main: Overriding active model: bge
+[2026-04-29 10:12:09] INFO main: RUN: step=04 | NewsAgg=agg | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 10:24:19] INFO main: Step 04 (agg) completed.
+[2026-04-29 10:28:48] INFO main: Overriding active branch: agg
+[2026-04-29 10:28:48] INFO main: Overriding active model: bge
+[2026-04-29 10:28:48] INFO main: RUN: step=05 | NewsAgg=agg | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 15:03:01] INFO main: Step 05 (agg) completed.
+[2026-04-29 16:00:19] INFO main: Overriding active branch: sum
+[2026-04-29 16:00:19] INFO main: Overriding active model: bge
+[2026-04-29 16:00:19] INFO main: RUN: step=03 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:03:04] INFO main: Overriding active branch: sum
+[2026-04-29 16:03:04] INFO main: Overriding active model: bge
+[2026-04-29 16:03:04] INFO main: RUN: step=03 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:03:18] INFO main: Overriding active branch: sum
+[2026-04-29 16:03:18] INFO main: Overriding active model: bge
+[2026-04-29 16:03:18] INFO main: RUN: step=04 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:03:18] INFO main: Step 04 (sum) completed.
+[2026-04-29 16:03:19] INFO main: Overriding active branch: sum
+[2026-04-29 16:03:19] INFO main: Overriding active model: bge
+[2026-04-29 16:03:19] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:03:33] INFO main: Step 05 (sum) completed.
+[2026-04-29 16:03:34] INFO main: Overriding active branch: sum
+[2026-04-29 16:03:34] INFO main: Overriding active model: bge
+[2026-04-29 16:03:34] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:03:37] INFO main: Step 06 (sum) completed.
+[2026-04-29 16:03:38] INFO main: Overriding active branch: sum
+[2026-04-29 16:03:38] INFO main: Overriding active model: bge
+[2026-04-29 16:03:38] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=base | variant=None
+[2026-04-29 16:03:39] INFO main: Overriding active branch: sum
+[2026-04-29 16:03:39] INFO main: Overriding active model: bge
+[2026-04-29 16:03:39] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-04-29 16:03:42] INFO main: Step 07 (sum) completed.
+[2026-04-29 16:03:42] INFO main: Overriding active branch: sum
+[2026-04-29 16:03:42] INFO main: Overriding active model: bge
+[2026-04-29 16:03:42] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-04-29 16:03:44] INFO main: Step 07 (sum) completed.
+[2026-04-29 16:08:12] INFO main: Overriding active branch: sum
+[2026-04-29 16:08:12] INFO main: Overriding active model: bge
+[2026-04-29 16:08:12] INFO main: RUN: step=03 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:09:10] INFO main: Overriding active branch: sum
+[2026-04-29 16:09:10] INFO main: Overriding active model: bge
+[2026-04-29 16:09:10] INFO main: RUN: step=04 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:09:10] INFO main: Step 04 (sum) completed.
+[2026-04-29 16:09:10] INFO main: Overriding active branch: sum
+[2026-04-29 16:09:10] INFO main: Overriding active model: bge
+[2026-04-29 16:09:10] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:09:19] INFO main: Step 05 (sum) completed.
+[2026-04-29 16:09:20] INFO main: Overriding active branch: sum
+[2026-04-29 16:09:20] INFO main: Overriding active model: bge
+[2026-04-29 16:09:20] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:09:23] INFO main: Step 06 (sum) completed.
+[2026-04-29 16:09:24] INFO main: Overriding active branch: sum
+[2026-04-29 16:09:24] INFO main: Overriding active model: bge
+[2026-04-29 16:09:24] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=base | variant=None
+[2026-04-29 16:09:37] INFO main: Step 06 (sum) completed.
+[2026-04-29 16:09:39] INFO main: Overriding active branch: sum
+[2026-04-29 16:09:39] INFO main: Overriding active model: bge
+[2026-04-29 16:09:39] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-04-29 16:09:40] INFO main: Step 07 (sum) completed.
+[2026-04-29 16:09:41] INFO main: Overriding active branch: sum
+[2026-04-29 16:09:41] INFO main: Overriding active model: bge
+[2026-04-29 16:09:41] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-04-29 16:09:42] INFO main: Step 07 (sum) completed.
+[2026-04-29 16:12:22] INFO main: Overriding active branch: sum
+[2026-04-29 16:12:22] INFO main: Overriding active model: bge
+[2026-04-29 16:12:22] INFO main: RUN: step=03 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:12:49] INFO main: Overriding active branch: sum
+[2026-04-29 16:12:49] INFO main: Overriding active model: bge
+[2026-04-29 16:12:49] INFO main: RUN: step=04 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:12:49] INFO main: Step 04 (sum) completed.
+[2026-04-29 16:12:50] INFO main: Overriding active branch: sum
+[2026-04-29 16:12:50] INFO main: Overriding active model: bge
+[2026-04-29 16:12:50] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:12:58] INFO main: Step 05 (sum) completed.
+[2026-04-29 16:13:00] INFO main: Overriding active branch: sum
+[2026-04-29 16:13:00] INFO main: Overriding active model: bge
+[2026-04-29 16:13:00] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-29 16:13:03] INFO main: Step 06 (sum) completed.
+[2026-04-29 16:13:04] INFO main: Overriding active branch: sum
+[2026-04-29 16:13:04] INFO main: Overriding active model: bge
+[2026-04-29 16:13:04] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=base | variant=None
+[2026-04-29 16:13:17] INFO main: Step 06 (sum) completed.
+[2026-04-29 16:13:18] INFO main: Overriding active branch: sum
+[2026-04-29 16:13:18] INFO main: Overriding active model: bge
+[2026-04-29 16:13:18] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-04-29 16:13:20] INFO main: Step 07 (sum) completed.
+[2026-04-29 16:13:20] INFO main: Overriding active branch: sum
+[2026-04-29 16:13:20] INFO main: Overriding active model: bge
+[2026-04-29 16:13:20] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-04-29 16:13:22] INFO main: Step 07 (sum) completed.
+[2026-04-29 16:14:35] INFO main: Overriding active branch: sum
+[2026-04-29 16:14:35] INFO main: Overriding active model: bge
+[2026-04-29 16:14:35] INFO main: RUN: step=03 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-30 07:30:21] INFO main: Step 03 (sum) completed.
+[2026-04-30 08:20:31] INFO main: Overriding active branch: sum
+[2026-04-30 08:20:31] INFO main: Overriding active model: bge
+[2026-04-30 08:20:31] INFO main: RUN: step=04 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-30 08:31:22] INFO main: Step 04 (sum) completed.
+[2026-04-30 08:33:09] INFO main: Overriding active branch: sum
+[2026-04-30 08:33:09] INFO main: Overriding active model: bge
+[2026-04-30 08:33:09] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-30 10:57:16] INFO main: Step 05 (sum) completed.
+[2026-04-30 11:01:53] INFO main: Overriding active branch: sum
+[2026-04-30 11:01:53] INFO main: Overriding active model: bge
+[2026-04-30 11:01:53] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-30 11:09:15] INFO main: Step 06 (sum) completed.
+[2026-04-30 11:09:17] INFO main: Overriding active branch: sum
+[2026-04-30 11:09:17] INFO main: Overriding active model: bge
+[2026-04-30 11:09:17] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=base | variant=None
+[2026-04-30 11:16:04] INFO main: Step 06 (sum) completed.
+[2026-04-30 11:16:06] INFO main: Overriding active branch: sum
+[2026-04-30 11:16:06] INFO main: Overriding active model: bge
+[2026-04-30 11:16:06] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-04-30 11:16:18] INFO main: Step 07 (sum) completed.
+[2026-04-30 11:16:19] INFO main: Overriding active branch: sum
+[2026-04-30 11:16:19] INFO main: Overriding active model: bge
+[2026-04-30 11:16:19] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-04-30 11:27:37] INFO main: Step 07 (sum) completed.
+[2026-04-30 22:51:03] INFO main: Overriding active branch: sum
+[2026-04-30 22:51:03] INFO main: Overriding active model: bge
+[2026-04-30 22:51:03] INFO main: RUN: step=04 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-04-30 23:01:49] INFO main: Step 04 (sum) completed.
+[2026-04-30 23:01:51] INFO main: Overriding active branch: sum
+[2026-04-30 23:01:51] INFO main: Overriding active model: bge
+[2026-04-30 23:01:51] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 00:17:36] INFO main: Overriding active branch: sum
+[2026-05-01 00:17:36] INFO main: Overriding active model: bge
+[2026-05-01 00:17:36] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 00:18:12] INFO main: Overriding active branch: sum
+[2026-05-01 00:18:12] INFO main: Overriding active model: bge
+[2026-05-01 00:18:12] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=base | variant=None
+[2026-05-01 00:18:37] INFO main: Step 06 (sum) completed.
+[2026-05-01 00:18:39] INFO main: Overriding active branch: sum
+[2026-05-01 00:18:39] INFO main: Overriding active model: bge
+[2026-05-01 00:18:39] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-05-01 00:18:52] INFO main: Step 07 (sum) completed.
+[2026-05-01 00:18:53] INFO main: Overriding active branch: sum
+[2026-05-01 00:18:53] INFO main: Overriding active model: bge
+[2026-05-01 00:18:53] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-05-01 10:01:09] INFO main: Overriding active branch: sum
+[2026-05-01 10:01:09] INFO main: Overriding active model: bge
+[2026-05-01 10:01:09] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 11:50:24] INFO main: Step 05 (sum) completed.
+[2026-05-01 12:13:07] INFO main: Overriding active branch: sum
+[2026-05-01 12:13:07] INFO main: Overriding active model: bge
+[2026-05-01 12:13:07] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 12:20:30] INFO main: Step 06 (sum) completed.
+[2026-05-01 12:20:33] INFO main: Overriding active branch: sum
+[2026-05-01 12:20:33] INFO main: Overriding active model: bge
+[2026-05-01 12:20:33] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-05-01 12:20:44] INFO main: Step 07 (sum) completed.
+[2026-05-01 12:20:45] INFO main: Overriding active branch: sum
+[2026-05-01 12:20:45] INFO main: Overriding active model: bge
+[2026-05-01 12:20:45] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-05-01 12:32:12] INFO main: Step 07 (sum) completed.
+[2026-05-01 12:56:57] INFO main: Overriding active branch: sum
+[2026-05-01 12:56:57] INFO main: Overriding active model: bge
+[2026-05-01 12:56:57] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 14:46:13] INFO main: Step 05 (sum) completed.
+[2026-05-01 14:46:19] INFO main: Overriding active branch: sum
+[2026-05-01 14:46:19] INFO main: Overriding active model: bge
+[2026-05-01 14:46:19] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 14:53:43] INFO main: Step 06 (sum) completed.
+[2026-05-01 14:53:45] INFO main: Overriding active branch: sum
+[2026-05-01 14:53:45] INFO main: Overriding active model: bge
+[2026-05-01 14:53:45] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-05-01 14:53:56] INFO main: Step 07 (sum) completed.
+[2026-05-01 14:53:57] INFO main: Overriding active branch: sum
+[2026-05-01 14:53:57] INFO main: Overriding active model: bge
+[2026-05-01 14:53:57] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-05-01 15:05:47] INFO main: Step 07 (sum) completed.
+[2026-05-01 15:16:55] INFO main: Overriding active branch: sum
+[2026-05-01 15:16:55] INFO main: Overriding active model: bge
+[2026-05-01 15:16:55] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 17:05:40] INFO main: Step 05 (sum) completed.
+[2026-05-01 17:05:46] INFO main: Overriding active branch: sum
+[2026-05-01 17:05:46] INFO main: Overriding active model: bge
+[2026-05-01 17:05:46] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 17:13:10] INFO main: Step 06 (sum) completed.
+[2026-05-01 17:13:13] INFO main: Overriding active branch: sum
+[2026-05-01 17:13:13] INFO main: Overriding active model: bge
+[2026-05-01 17:13:13] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-05-01 17:13:25] INFO main: Step 07 (sum) completed.
+[2026-05-01 17:13:26] INFO main: Overriding active branch: sum
+[2026-05-01 17:13:26] INFO main: Overriding active model: bge
+[2026-05-01 17:13:26] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-05-01 17:24:47] INFO main: Step 07 (sum) completed.
+[2026-05-01 17:34:01] INFO main: Overriding active branch: sum
+[2026-05-01 17:34:01] INFO main: Overriding active model: bge
+[2026-05-01 17:34:01] INFO main: RUN: step=05 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 19:22:55] INFO main: Step 05 (sum) completed.
+[2026-05-01 19:23:01] INFO main: Overriding active branch: sum
+[2026-05-01 19:23:01] INFO main: Overriding active model: bge
+[2026-05-01 19:23:01] INFO main: RUN: step=06 | NewsAgg=sum | EmbModel=bge | RetModel=None | variant=None
+[2026-05-01 19:30:27] INFO main: Step 06 (sum) completed.
+[2026-05-01 19:30:29] INFO main: Overriding active branch: sum
+[2026-05-01 19:30:29] INFO main: Overriding active model: bge
+[2026-05-01 19:30:29] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bge | variant=None
+[2026-05-01 19:30:40] INFO main: Step 07 (sum) completed.
+[2026-05-01 19:30:40] INFO main: Overriding active branch: sum
+[2026-05-01 19:30:40] INFO main: Overriding active model: bge
+[2026-05-01 19:30:40] INFO main: RUN: step=07 | NewsAgg=sum | EmbModel=bge | RetModel=bm25 | variant=None
+[2026-05-01 19:42:00] INFO main: Step 07 (sum) completed.

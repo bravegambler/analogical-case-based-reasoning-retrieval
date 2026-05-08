@@ -1,0 +1,104 @@
+_wandb:
+    value:
+        cli_version: 0.26.0
+        e:
+            m2v3wi84z4erivclws2jzdwu4zuu0a6u:
+                args:
+                    - --step
+                    - "05"
+                    - --NewsAgg
+                    - sum
+                    - --EmbModel
+                    - bge
+                codePath: main.py
+                codePathLocal: main.py
+                cpu_count: 64
+                cpu_count_logical: 128
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "941289119744"
+                        used: "512162242560"
+                email: kenlee.reb@gmail.com
+                executable: /mnt/raid1/ken/vllm_env/bin/python
+                gpu: NVIDIA L40S
+                gpu_count: 4
+                gpu_nvidia:
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-48855ea8-8082-2c16-e888-0920ff48d2a3
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-ab61f641-8dfb-380c-a9e4-f18ae9ff6d2f
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-1b444258-8c55-f2df-95e0-bf6700ce7452
+                    - architecture: Ada
+                      cudaCores: 18176
+                      memoryTotal: "48305799168"
+                      name: NVIDIA L40S
+                      uuid: GPU-aadd9963-4b8b-146c-d474-d87aa281af91
+                host: LMF-L40S-1
+                memory:
+                    total: "540504408064"
+                os: Linux-6.8.0-60-generic-x86_64-with-glibc2.39
+                program: /mnt/raid1/ken/Capstone_data/Capstone_Context/main.py
+                python: CPython 3.10.20
+                root: /mnt/raid1/ken/Capstone_data/Capstone_Context/logs/sum_bge/20260501_100149
+                startedAt: "2026-05-01T02:01:50.585422Z"
+                writerId: m2v3wi84z4erivclws2jzdwu4zuu0a6u
+        m: []
+        python_version: 3.10.20
+        t:
+            "1":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+            "2":
+                - 1
+                - 5
+                - 11
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 75
+            "3":
+                - 2
+                - 13
+                - 16
+                - 61
+            "4": 3.10.20
+            "5": 0.26.0
+            "6": 5.4.0
+            "10":
+                - 20
+            "12": 0.26.0
+            "13": linux-x86_64
+base_model:
+    value: BAAI/bge-m3
+batch_size:
+    value: 64
+branch:
+    value: sum
+epochs:
+    value: 10
+learning_rate:
+    value: 2e-05
+max_seq_length:
+    value: 512
+model:
+    value: bge
